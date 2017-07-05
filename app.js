@@ -8,6 +8,7 @@ var bodyParser = require ('body-parser');
 var app = express();
 
 //rutas
+var user_routes = require('./routes/user');
 
 
 //configuramos bodyParser
@@ -21,10 +22,8 @@ app.use(bodyParser.json());
 
 
 //rutas base
+app.use('/api', user_routes);
 
-app.get('/prueba', function(req, res){
-	res.status(200).send({message: 'Ruta para verificar'})
-})
 
 
 

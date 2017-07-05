@@ -8,8 +8,8 @@ var app = require ('./app');
 //si no tenemos definido un puerto en las varibales de entorno entonces usamos el 3977 por defecto
 var port= process.env.PORT || 3977;
 
-
-
+//para evitar el mensaje de mongoose en la consola
+mongoose.Promise = global.Promise;
 //previamente creamos un elemento desde la consola de mongodb para crear la base
 //hacemos la conexion mediante el puerto que viene por defecto 27017 y llamamos un func flecha como callback
 //si hay algun problema nos tira el error y si no por consola nos informa que todo esta ok
